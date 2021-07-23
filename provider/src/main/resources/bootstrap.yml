@@ -1,0 +1,19 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: provider
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+      config:
+        server-addr: 127.0.0.1:8848
+        file-extension: yml #provider-dev.yml
+        #shared-configs:
+          #- xxx.yml
+          #- xxx.yml
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:8080
+        port: 8719

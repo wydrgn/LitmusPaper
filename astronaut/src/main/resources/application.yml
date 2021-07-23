@@ -1,0 +1,40 @@
+server:
+  port: 8201
+  servlet:
+    context-path: /astronaut
+spring:
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    database: 0
+    password: 123456
+      #resources:
+      #static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/
+      #链路跟踪
+      #zipkin:
+      #base-url: http://localhost:19411
+      #链路跟踪
+      #sleuth:
+      #sampler:
+    #probability: 1
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://127.0.0.1:3306/astronaut?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+#暴露全部的监控信息
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      cors:
+        allowed-origins: "*"
+        allowed-methods: "*"
+
+#雪花id
+SnowFlake:
+  datacenterId: 2 #服务id
+  machineId: 2 #集群id
