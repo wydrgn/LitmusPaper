@@ -8,11 +8,10 @@
         <version>1.0.0</version>
     </parent>
 
-
-    <artifactId>astronaut</artifactId>
+    <artifactId>clefki</artifactId>
     <version>1.0.0</version>
-    <name>astronaut</name>
-    <description>用户服务</description>
+    <name>clefki</name>
+    <description>秘钥服务 (钥圈儿)</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -24,6 +23,7 @@
             <artifactId>provider</artifactId>
             <version>1.0.0</version>
         </dependency>
+
         <!--测试-->
         <dependency>
             <groupId>org.junit.jupiter</groupId>

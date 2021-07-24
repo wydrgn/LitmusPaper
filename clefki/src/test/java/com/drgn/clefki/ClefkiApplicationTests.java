@@ -1,14 +1,13 @@
-package com.drgn.common;
+package com.drgn.clefki;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class CommonApplicationTests {
+class ClefkiApplicationTests {
 
     @Test
-    void getByQuery() {
-
+    void contextLoads() {
     }
 
 }
