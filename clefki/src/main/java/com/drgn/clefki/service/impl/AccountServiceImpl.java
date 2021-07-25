@@ -36,6 +36,7 @@ public class AccountServiceImpl implements AccountService {
         }
         // 部分隐私字段处理不应传出
         AccountVO aVO = new AccountVO();
+        //accountNumber 根据长度加密部分
         BeanUtil.copyProperties(account, aVO, "password");
         return aVO;
     }
