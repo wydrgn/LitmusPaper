@@ -17,6 +17,7 @@ import java.util.stream.Collectors;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
+    // todo  @ExceptionHandler methods, a root exception match will be preferred to just matching a cause of the current exception (测试这句话是 跟异常优先级是否更高的意思)
     @ExceptionHandler(Exception.class)
     public Result errorHandler(Exception e) throws Exception {
         if (e instanceof MethodArgumentNotValidException) { // 数据校验异常，仅提示

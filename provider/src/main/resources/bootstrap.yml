@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: dev
+    active: dev # @profile("dev") 可以实现按需注入
   application:
     name: provider
   cloud:
