@@ -32,7 +32,7 @@ public class RedisLockUtils {
     public static Long DELETE_KEY_SUCCESS = 1L;
 
     public boolean isLock(String key) {
-        return StringUtils.isEmpty(redisTemplate.opsForValue().get(key)) ? false : true;
+        return !StringUtils.isEmpty(redisTemplate.opsForValue().get(key));
     }
 
     public boolean lock(String key, String value) {

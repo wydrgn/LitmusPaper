@@ -1,7 +1,7 @@
 package com.drgn.common.exception;
 
 /**
- * 数据上报模块_自定义异常类
+ *
  *
  * @author wydrgn
  */

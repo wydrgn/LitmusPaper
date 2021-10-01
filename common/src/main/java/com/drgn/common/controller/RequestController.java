@@ -4,6 +4,8 @@ import com.drgn.common.exception.ParamException;
 import com.drgn.common.model.DTO.EurekaServiceRequestDTO;
 import com.drgn.common.model.web.Result;
 import com.drgn.common.service.inter.RequestService;
+import org.redisson.api.RedissonClient;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
