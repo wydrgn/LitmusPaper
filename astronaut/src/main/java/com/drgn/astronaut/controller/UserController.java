@@ -2,21 +2,46 @@ package com.drgn.astronaut.controller;
 
 import com.drgn.astronaut.service.inter.UserService;
 import com.drgn.common.config.ServerConfig;
+import com.drgn.common.exception.BaseException;
 import com.drgn.common.exception.ParamException;
 import com.drgn.common.model.User;
+import com.drgn.common.utils.LockerProxy;
+import org.redisson.api.RedissonClient;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 @RestController
 @RequestMapping("/user")
 public class UserController {
+
     @Resource
     ServerConfig serverConfig;
 
     @Resource
     UserService userService;
+
+    @Autowired
+    RedissonClient redissonClient;
+
+    @Autowired
+    LockerProxy lockerProxy;
+
+    @GetMapping("/testRedisson")
+    public String testRedisson(List<String> idList) throws BaseException {
+        lockerProxy.lock(() -> {
+            try {
+                Thread.sleep(20 * 1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("具体逻辑");
+        }, "testRedisson",30L, 5L, TimeUnit.SECONDS);
+        return "testRedisson";
+    }
 
     @GetMapping("/list")
     public List<User> list(String name) {

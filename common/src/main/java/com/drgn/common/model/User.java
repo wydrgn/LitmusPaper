@@ -26,6 +26,9 @@ public class User implements Serializable {
     @TableField("drgnmon_flag")
     private String drgnmonFlag;
 
+    @TableField("clefki_flag")
+    private String clefkiFlag;
+
     public String getId() {
         return id;
     }
@@ -72,5 +75,13 @@ public class User implements Serializable {
 
     public void setDrgnmonFlag(String drgnmonFlag) {
         this.drgnmonFlag = drgnmonFlag;
+    }
+
+    public String getClefkiFlag() {
+        return clefkiFlag;
+    }
+
+    public void setClefkiFlag(String clefkiFlag) {
+        this.clefkiFlag = clefkiFlag;
     }
 }
