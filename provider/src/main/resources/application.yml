@@ -7,7 +7,7 @@ spring:
     host: 127.0.0.1
     port: 6379
     database: 0
-    password: 123456
+      #password: 123456
     #resources:
     #static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/
   #链路跟踪
